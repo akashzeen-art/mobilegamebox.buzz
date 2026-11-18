@@ -69,9 +69,9 @@
 
                 <!-- Left Section: Logo -->
                 <div class="nav-logo-section" style="display:flex; align-items:center; flex-shrink:0;">
-                <a href="index.html" class="nk-nav-logo"
-                        style="color:#fff; font-size:26px; font-weight:bold; text-decoration:none; white-space:nowrap;">
-                        <span data-i18n="mobilegamebox.buzz">mobilegamebox.buzz</span>
+                <a href="index.html" class="nk-nav-logo" aria-label="mobilegamebox.buzz"
+                        style="display:flex; align-items:center; text-decoration:none; white-space:nowrap;">
+                        <img src="assets/images/GAMERS_PARADISE_LOGO.png" alt="mobilegamebox.buzz" class="nav-brand-logo">
                 </a>
                 </div>
 
@@ -361,8 +361,9 @@
             font-size: 16px;
         }
 
-        .nav-logo-section .nk-nav-logo {
-            font-size: 20px !important;
+        .nav-brand-logo {
+            height: 44px;
+            max-width: 140px;
         }
     }
 
@@ -380,8 +381,9 @@
             padding: 0 12px !important;
         }
 
-        .nav-logo-section .nk-nav-logo {
-            font-size: 18px !important;
+        .nav-brand-logo {
+            height: 40px;
+            max-width: 120px;
         }
 
         .nav-actions-section {
@@ -431,11 +433,9 @@
             overflow: hidden;
         }
 
-        .nav-logo-section .nk-nav-logo {
-            font-size: 16px !important;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .nav-brand-logo {
+            height: 34px;
+            max-width: 100px;
         }
 
         .nav-actions-section {
@@ -488,8 +488,9 @@
     }
 
     @media (max-width: 360px) {
-        .nav-logo-section .nk-nav-logo {
-            font-size: 14px !important;
+        .nav-brand-logo {
+            height: 30px;
+            max-width: 90px;
         }
 
         .profile-link-btn,
