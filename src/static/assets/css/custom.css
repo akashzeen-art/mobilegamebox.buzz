@@ -1,5 +1,5 @@
 /* =============================================
-   mobilegamebox.buzz — Deep Space Gaming Theme
+   mobilegamebox — Deep Space Gaming Theme
    Rich purples, neon cyan/pink accents, glows
    ============================================= */
 
@@ -1581,31 +1581,6 @@ body.lang-en .games-section-header { direction: ltr; }
     background-clip: text;
     text-transform: uppercase;
 }
-
-.nk-footer-links { text-align: center; padding: 6px 0; }
-
-.nk-footer-links .terms-link {
-    color: var(--text-secondary);
-    font-size: 12px;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.25s ease;
-    position: relative;
-    padding-bottom: 2px;
-}
-.nk-footer-links .terms-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
-    transition: width 0.3s ease;
-}
-.nk-footer-links .terms-link:hover {
-    color: var(--accent-2);
-    text-shadow: 0 0 10px var(--glow-cyan);
-}
-.nk-footer-links .terms-link:hover::after { width: 100%; }
 
 .footer-copy {
     color: rgba(120,110,200,0.35);

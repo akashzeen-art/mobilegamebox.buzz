@@ -1,4 +1,4 @@
-# 📦 Distribution Package - جنة الالعاب (mobilegamebox.buzz)
+# 📦 Distribution Package - جنة الالعاب (mobilegamebox)
 
 ## Package Information
 
