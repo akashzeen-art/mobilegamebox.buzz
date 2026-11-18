@@ -1,4 +1,4 @@
-# 📦 Distribution Package - جنة الالعاب (Funz 24 Games)
+# 📦 Distribution Package - جنة الالعاب (mobilegamebox.buzz)
 
 ## Package Information
 
