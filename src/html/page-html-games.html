@@ -1,0 +1,364 @@
+{% set header_title = 'Gaming Template' %} {% set header_title_show = false %}
+{% set header_text %}
+{% include "shared/hero-banner.html" %}
+{% endset %} {% set header_image = false %} {% set header_parallax = false %} {% set header_parallax_opacity = false %} {% set header_size = 'lg' %} {% set header_visible = 6 %} {% extends 'layouts/layout-2.html' %} {%
+block content %}
+<!-- START: Demos -->
+<!-- <div class="container" id="demos">
+        <div class="nk-gap-6"></div>
+        <div class="row vertical-gap lg-gap">
+            ...
+        </div>
+        <div class="nk-gap-6"></div>
+    </div> -->
+<!-- END: Demos -->
+
+<!-- START: Games Sections -->
+<div class="bg-dark-1 nk-box">
+  <div class="container">
+    <div class="nk-gap-6"></div>
+
+    <!-- Top 10 -->
+    <div class="games-section" id="section-top10">
+      <div class="games-section-header">
+        <span class="games-section-icon">&#9733;</span>
+        <h2 class="games-section-title"><span data-i18n="أفضل 10 ألعاب">أفضل 10 ألعاب</span></h2>
+      </div>
+      <div class="games-section-divider"></div>
+      <div class="row vertical-gap lg-gap games-grid" data-category="Top 10 Games" data-overlay="nk-image-box-bottom nk-image-box-overlay"></div>
+    </div>
+
+    <div class="nk-gap-6"></div>
+
+    <!-- Action -->
+    <div class="games-section" id="section-action">
+      <div class="games-section-header">
+        <span class="games-section-icon">&#9889;</span>
+        <h2 class="games-section-title"><span data-i18n="ألعاب الأكشن">ألعاب الأكشن</span></h2>
+      </div>
+      <div class="games-section-divider"></div>
+      <div class="row vertical-gap lg-gap games-grid" data-category="Action" data-overlay="nk-image-box-bottom nk-image-box-overlay"></div>
+    </div>
+
+    <div class="nk-gap-6"></div>
+
+    <!-- Puzzle -->
+    <div class="games-section" id="section-puzzle">
+      <div class="games-section-header">
+        <span class="games-section-icon">&#129504;</span>
+        <h2 class="games-section-title"><span data-i18n="ألعاب الألغاز">ألعاب الألغاز</span></h2>
+      </div>
+      <div class="games-section-divider"></div>
+      <div class="row vertical-gap lg-gap games-grid" data-category="Puzzle" data-overlay="nk-image-box-bottom nk-image-box-overlay"></div>
+    </div>
+
+    <div class="nk-gap-6"></div>
+
+    <!-- Arcade -->
+    <div class="games-section" id="section-arcade">
+      <div class="games-section-header">
+        <span class="games-section-icon">&#127918;</span>
+        <h2 class="games-section-title"><span data-i18n="ألعاب أركيد">ألعاب أركيد</span></h2>
+      </div>
+      <div class="games-section-divider"></div>
+      <div class="row vertical-gap lg-gap games-grid" data-category="Arcade" data-overlay="nk-image-box-bottom nk-image-box-overlay"></div>
+    </div>
+
+    <div class="nk-gap-6"></div>
+
+    <!-- All Games -->
+    <div class="games-section" id="section-all">
+      <div class="games-section-header">
+        <span class="games-section-icon">&#127760;</span>
+        <h2 class="games-section-title"><span data-i18n="جميع الألعاب">جميع الألعاب</span></h2>
+      </div>
+      <div class="games-section-divider"></div>
+      <div class="row vertical-gap lg-gap games-grid" data-category="All Games" data-limit="24" data-overlay="nk-image-box-bottom nk-image-box-overlay"></div>
+    </div>
+
+    <div class="nk-gap-6"></div>
+  </div>
+</div>
+<!-- END: Games Sections -->
+
+  <!-- START: Subscribe -->
+  <!-- <div class="bg-dark-1 nk-box">
+        <div class="nk-gap-2"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                    <h2 class="text-center nk-title h1">Subscribe to our Newsletter</h2>
+                    <div class="nk-gap-2"></div>
+
+                    <form action="//nkdev.us11.list-manage.com/subscribe/post?u=d433160c0c43dcf8ecd52402f&amp;id=68d0448ee3" method="post" class="nk-mchimp validate" target="_blank">
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email *">
+                            <button class="nk-btn nk-btn-lg link-effect-4">Subscribe</button>
+                        </div>
+                        <div class="nk-form-response-success"></div>
+                        <div class="nk-form-response-error"></div>
+                        <small>We'll never share your email with anyone else.</small>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d433160c0c43dcf8ecd52402f_68d0448ee3" tabindex="-1" value=""></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="nk-gap-2"></div>
+        <div class="nk-gap-6"></div>
+        <div class="nk-gap-4"></div>
+    </div> -->
+  <!-- END: Subscribe -->
+
+<!-- Close Button (Outside container for better visibility) -->
+<button id="backToHome" class="close-game-btn" title="إغلاق اللعبة">✕</button>
+
+<!-- Game Container -->
+<div id="gameContainer" class="game-container">
+  <div id="gameLoader" class="game-loader">
+    <div class="loader-spinner"></div>
+    <p class="loader-text">جاري تحميل اللعبة...</p>
+  </div>
+  <iframe id="gameFrame" class="game-frame" allowfullscreen></iframe>
+</div>
+
+<style>
+/* Play Now Button Styles */
+.play-now-btn {
+  cursor: pointer !important;
+  user-select: none;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.play-now-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.play-now-btn:active {
+  transform: scale(0.95);
+}
+
+/* Game Card Hover Effect */
+.nk-image-box-3 {
+  transition: transform 0.3s ease;
+}
+
+.nk-image-box-3:hover {
+  transform: translateY(-5px);
+}
+
+.nk-image-box-link {
+  cursor: pointer;
+}
+
+.game-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999999;
+  background: #000;
+}
+
+.game-container.active {
+  display: block;
+}
+
+.game-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-frame.loaded {
+  opacity: 1;
+}
+
+/* Loading Spinner */
+.game-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255,255,255,0.2);
+  border-top: 5px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+}
+
+.game-loader.hidden {
+  display: none;
+}
+
+.close-game-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 99999999;
+  width: 55px;
+  height: 55px;
+  background: #ff0000;
+  color: #fff;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8), 0 0 0 4px rgba(255,0,0,0.3);
+  transition: all 0.2s ease;
+  outline: none;
+  line-height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+.close-game-btn.active {
+  display: block;
+}
+
+.close-game-btn:hover {
+  background: #cc0000;
+  transform: scale(1.15);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.9), 0 0 0 6px rgba(255,0,0,0.4);
+}
+
+.close-game-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .close-game-btn {
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    line-height: 37px;
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .close-game-btn {
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 32px;
+    border-width: 2px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(255,0,0,0.3);
+  }
+}
+
+@media (max-width: 360px) {
+  .close-game-btn {
+    top: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 29px;
+  }
+}
+
+</style>
+
+  {% endblock %}
+
+{% block javascript %}
+  <script src="assets/js/games-data.js"></script>
+  <script src="assets/js/games-player.js"></script>
+  <script src="assets/js/games-render.js"></script>
+  <script type="text/javascript">
+    var tpj = jQuery;
+    var revapi50;
+    tpj(document).ready(function () {
+      if (tpj("#rev_slider_50_1").revolution == undefined) {
+        revslider_showDoubleJqueryError("#rev_slider_50_1");
+      } else {
+        revapi50 = tpj("#rev_slider_50_1")
+          .show()
+          .revolution({
+            sliderType: "carousel",
+            jsFileLocation: "assets/vendor/revolution/js/",
+            sliderLayout: "auto",
+            dottedOverlay: "none",
+            delay: 9000,
+            navigation: {
+              keyboardNavigation: "off",
+              keyboard_direction: "horizontal",
+              onHoverStop: "off",
+            },
+            carousel: {
+              maxRotation: 8,
+              vary_rotation: "off",
+              minScale: 20,
+              vary_scale: "off",
+              horizontal_align: "center",
+              vertical_align: "center",
+              fadeout: "off",
+              vary_fade: "off",
+              maxVisibleItems: 3,
+              infinity: "on",
+              space: -90,
+              stretch: "off",
+            },
+            responsiveLevels: [1240, 1024, 778, 480],
+            gridwidth: [800, 600, 400, 320],
+            gridheight: [600, 400, 320, 280],
+            lazyType: "none",
+            shadow: 0,
+            spinner: "off",
+            stopLoop: "on",
+            stopAfterLoops: 0,
+            stopAtSlide: 0,
+            shuffle: "off",
+            autoHeight: "off",
+            fullScreenAlignForce: "off",
+            fullScreenOffsetContainer: "",
+            fullScreenOffset: "",
+            disableProgressBar: "on",
+            hideThumbsOnMobile: "off",
+            hideSliderAtLimit: 0,
+            hideCaptionAtLimit: 0,
+            hideAllCaptionAtLilmit: 0,
+            debugMode: false,
+            fallbacks: {
+              simplifyAll: "off",
+              nextSlideOnWindowFocus: "off",
+              disableFocusListener: false,
+            },
+          });
+      }
+    });
+  </script>
+
+{% endblock %}
