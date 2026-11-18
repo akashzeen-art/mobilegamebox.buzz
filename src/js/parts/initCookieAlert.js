@@ -21,7 +21,7 @@ function initCookieAlert() {
     // Get current language
     function getCurrentLang() {
         try {
-            return localStorage.getItem('siteLang') || 'ar';
+            return localStorage.getItem('siteLang') || 'en';
         } catch(e) {
             return 'ar';
         }

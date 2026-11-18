@@ -12,7 +12,7 @@
     }
 
     function getCurrentLang() {
-        return localStorage.getItem('siteLang') || 'ar';
+        return localStorage.getItem('siteLang') || 'en';
     }
 
     function getDisplayName(game, lang) {

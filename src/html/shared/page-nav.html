@@ -61,11 +61,11 @@
             .nk-navbar-light
             .nk-navbar-no-link-effect
     -->
-    <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-fixed"
-        style="background:#000; direction:rtl; height:70px; display:flex; align-items:center; width:100%; position:relative; z-index:1100;">
+    <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-fixed" id="nk-navbar-top"
+        style="background:#000; direction:ltr; height:70px; display:flex; align-items:center; width:100%; position:relative; z-index:1100;">
         <div class="container nav-container" style="width:100%; padding:0 40px;">
             <div class="nk-nav-table"
-                style="display:flex; align-items:center; justify-content:space-between; direction:rtl; width:100%; gap:20px;">
+                style="display:flex; align-items:center; justify-content:space-between; direction:ltr; width:100%; gap:20px;">
 
                 <!-- Left Section: Logo -->
                 <div class="nav-logo-section" style="display:flex; align-items:center; flex-shrink:0;">
@@ -78,17 +78,17 @@
                 <!-- Center Section: Menu Items (Desktop only) -->
                 <div class="nav-menu-section" style="display:flex; align-items:center; flex:1; justify-content:center; gap:70px;">
                 <ul class="nk-nav nk-nav-right d-none d-lg-block" data-nav-mobile="#nk-nav-mobile"
-                        style="list-style:none; margin:0; padding:0; display:flex; flex-direction:row; direction:rtl; gap:70px; align-items:center;">
+                        style="list-style:none; margin:0; padding:0; display:flex; flex-direction:row; direction:ltr; gap:70px; align-items:center;">
                     <li class="active">
                         <a href="index.html"
                                 style="color:#fff; font-size:16px; font-weight:bold; text-decoration:none; white-space:nowrap;">
-                            <span data-i18n="الصفحة الرئيسية">الصفحة الرئيسية</span>
+                            <span data-i18n="الصفحة الرئيسية">Home</span>
                         </a>
                     </li>
                     <li>
                         <a href="page-html-games.html"
                                 style="color:#fff; font-size:16px; font-weight:bold; text-decoration:none; white-space:nowrap;">
-                            <span data-i18n="الألعاب">الألعاب</span>
+                            <span data-i18n="الألعاب">Games</span>
                         </a>
                     </li>
                 </ul>
@@ -100,20 +100,20 @@
                     <div class="profile-link-container" style="display:flex; align-items:center;">
                         <a href="page-profile.html" class="profile-link-btn" style="color:#fff; font-size:16px; font-weight:bold; text-decoration:none; padding:8px 16px; border-radius:5px; background:linear-gradient(135deg, #333 0%, #1a1a1a 100%); border:2px solid #444; transition:all 0.3s ease; white-space:nowrap; display:flex; align-items:center; gap:5px;">
                             <span class="profile-icon">👤</span>
-                            <span class="profile-text" data-i18n="ملفي الشخصي">ملفي الشخصي</span>
+                            <span class="profile-text" data-i18n="ملفي الشخصي">My Profile</span>
                         </a>
                     </div>
 
                     <!-- Language Dropdown (Always visible) -->
                     <div class="lang-switch-container" style="display:flex; align-items:center; position:relative;">
                         <div class="lang-dropdown">
-                            <button id="langSwitch" class="lang-switch-btn" aria-haspopup="true" aria-expanded="false">
+                            <button id="langSwitch" class="lang-switch-btn english" aria-haspopup="true" aria-expanded="false">
                                 <span class="lang-icon">🌐</span>
-                                <span class="lang-text" id="langText">العربية</span>
+                                <span class="lang-text" id="langText">English</span>
                             </button>
                             <ul class="lang-dropdown-menu" id="langMenu" role="menu" aria-hidden="true">
+                                <li role="none"><button role="menuitem" class="lang-option active" data-lang="en">English</button></li>
                                 <li role="none"><button role="menuitem" class="lang-option" data-lang="ar">العربية</button></li>
-                                <li role="none"><button role="menuitem" class="lang-option" data-lang="en">English</button></li>
                                 <li role="none"><button role="menuitem" class="lang-option" data-lang="pt">Português</button></li>
                                 <li role="none"><button role="menuitem" class="lang-option" data-lang="pl">Polski</button></li>
                                 <li role="none"><button role="menuitem" class="lang-option" data-lang="cs">Čeština</button></li>
@@ -362,8 +362,8 @@
         }
 
         .nav-brand-logo {
-            height: 44px;
-            max-width: 140px;
+            height: 32px;
+            max-width: 100px;
         }
     }
 
@@ -382,8 +382,8 @@
         }
 
         .nav-brand-logo {
-            height: 40px;
-            max-width: 120px;
+            height: 28px;
+            max-width: 88px;
         }
 
         .nav-actions-section {
@@ -434,8 +434,8 @@
         }
 
         .nav-brand-logo {
-            height: 34px;
-            max-width: 100px;
+            height: 24px;
+            max-width: 76px;
         }
 
         .nav-actions-section {
@@ -489,8 +489,8 @@
 
     @media (max-width: 360px) {
         .nav-brand-logo {
-            height: 30px;
-            max-width: 90px;
+            height: 22px;
+            max-width: 68px;
         }
 
         .profile-link-btn,
@@ -1072,11 +1072,11 @@
         'من خلال المتابعة، فإنك تقبل جميع الشروط والأحكام الخاصة بالخدمة وتوافق على تلقي تحديثات حول اشتراكك على رقم هاتفك المحمول المسجل': 'Kontynuując, akceptujesz wszystkie Warunki korzystania z usługi i zgadzasz się na otrzymywanie aktualizacji dotyczących subskrypcji',
     };
 
-    // Initialize language from localStorage; if missing, default to Arabic
+    // Initialize language from localStorage; if missing, default to English
     let currentLang = localStorage.getItem('siteLang');
     if (!currentLang) {
-        currentLang = 'ar';
-        try { localStorage.setItem('siteLang', 'ar'); } catch(e) { /* ignore if storage blocked */ }
+        currentLang = 'en';
+        try { localStorage.setItem('siteLang', 'en'); } catch(e) { /* ignore if storage blocked */ }
     }
 
     const arToCs = {
@@ -1160,7 +1160,7 @@
     // Set the small lang button text immediately to avoid flicker
     try {
         const _lt = document.getElementById('langText');
-        if (_lt) _lt.textContent = langLabels[currentLang] || 'العربية';
+        if (_lt) _lt.textContent = langLabels[currentLang] || 'English';
     } catch(e) { /* ignore if DOM not ready */ }
     
     // Apply language on page load
@@ -1187,7 +1187,7 @@
         if (!langText || !langBtn) return;
         
         const validLangs = ['ar', 'en', 'pt', 'pl', 'cs'];
-        const targetLang = validLangs.includes(lang) ? lang : 'ar';
+        const targetLang = validLangs.includes(lang) ? lang : 'en';
         
         // Pick translation map: always translate FROM Arabic keys
         const maps = { en: arToEn, pt: arToPt, pl: arToPl, cs: arToCs };
@@ -1196,18 +1196,27 @@
         // Update HTML lang and dir attributes
         const htmlElement = document.documentElement;
         const isRTL = targetLang === 'ar';
+        const pageDir = isRTL ? 'rtl' : 'ltr';
         
-        langText.textContent = langLabels[targetLang] || 'العربية';
+        langText.textContent = langLabels[targetLang] || 'English';
         langBtn.classList.toggle('arabic', isRTL);
         langBtn.classList.toggle('english', !isRTL);
         langBtn.title = isRTL ? 'Switch Language' : 'تغيير اللغة';
-        body.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        body.setAttribute('dir', pageDir);
         body.classList.toggle('lang-ar', isRTL);
         body.classList.toggle('lang-en', !isRTL);
         if (htmlElement) {
             htmlElement.setAttribute('lang', targetLang);
-            htmlElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+            htmlElement.setAttribute('dir', pageDir);
         }
+
+        // Keep top navbar direction in sync
+        const topNav = document.getElementById('nk-navbar-top');
+        if (topNav) topNav.style.direction = pageDir;
+        const navTable = topNav ? topNav.querySelector('.nk-nav-table') : null;
+        if (navTable) navTable.style.direction = pageDir;
+        const navMenu = topNav ? topNav.querySelector('.nk-nav') : null;
+        if (navMenu) navMenu.style.direction = pageDir;
         
         // Update active language in dropdown
         const langOptions = document.querySelectorAll('.lang-option');
@@ -1225,15 +1234,9 @@
         // Update mobile menu direction
         const mobileMenu = document.getElementById('nk-nav-mobile');
         if (mobileMenu) {
-            if (targetLang === 'en') {
-                mobileMenu.style.direction = 'ltr';
-                mobileMenu.classList.remove('lang-ar');
-                mobileMenu.classList.add('lang-en');
-            } else {
-                mobileMenu.style.direction = 'rtl';
-                mobileMenu.classList.remove('lang-en');
-                mobileMenu.classList.add('lang-ar');
-            }
+            mobileMenu.style.direction = pageDir;
+            mobileMenu.classList.toggle('lang-ar', isRTL);
+            mobileMenu.classList.toggle('lang-en', !isRTL);
         }
         
         // Dispatch language change event for other components (e.g., cookie alert)
@@ -1426,7 +1429,7 @@
         
         // If empty, populate with menu items
         if (menuContent.children.length === 0) {
-            var currentLang = localStorage.getItem('siteLang') || 'ar';
+            var currentLang = localStorage.getItem('siteLang') || 'en';
             var isArabic = currentLang === 'ar';
             
             var menuItems = [
@@ -1505,16 +1508,11 @@
         
         // Update direction based on language
         function updateDirection() {
-            var currentLang = localStorage.getItem('siteLang') || 'ar';
-            if (currentLang === 'en') {
-                mobileMenu.style.direction = 'ltr';
-                document.body.classList.remove('lang-ar');
-                document.body.classList.add('lang-en');
-            } else {
-                mobileMenu.style.direction = 'rtl';
-                document.body.classList.remove('lang-en');
-                document.body.classList.add('lang-ar');
-            }
+            var currentLang = localStorage.getItem('siteLang') || 'en';
+            var isRTL = currentLang === 'ar';
+            mobileMenu.style.direction = isRTL ? 'rtl' : 'ltr';
+            document.body.classList.toggle('lang-ar', isRTL);
+            document.body.classList.toggle('lang-en', !isRTL);
         }
         
         updateDirection();

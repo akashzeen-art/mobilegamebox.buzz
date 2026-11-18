@@ -100,7 +100,7 @@
 <script>
 // Profile page translation helper - uses same maps as page-nav.html
 function t(arKey) {
-    const lang = localStorage.getItem('siteLang') || 'ar';
+    const lang = localStorage.getItem('siteLang') || 'en';
     if (lang === 'ar') return arKey;
     const maps = {
         en: { 'مشترك': 'Subscribed', 'غير مشترك': 'Not Subscribed', 'تم الاشتراك بنجاح! الصلاحية حتى:': 'Subscribed! Valid until:', 'هل أنت متأكد من إلغاء الاشتراك؟': 'Are you sure you want to unsubscribe?', 'تم إلغاء الاشتراك بنجاح!': 'Successfully unsubscribed!' },
@@ -138,12 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Re-apply language so data-i18n elements render correctly
-    if (window.applyLanguage) window.applyLanguage(localStorage.getItem('siteLang') || 'ar');
+    if (window.applyLanguage) window.applyLanguage(localStorage.getItem('siteLang') || 'en');
 });
 
 // Also re-apply on language change event
 window.addEventListener('languageChanged', function(e) {
-    const lang = (e.detail && e.detail.lang) || localStorage.getItem('siteLang') || 'ar';
+    const lang = (e.detail && e.detail.lang) || localStorage.getItem('siteLang') || 'en';
     // Re-translate status field display value
     const savedStatus = localStorage.getItem('profileStatus');
     if (savedStatus) document.getElementById('statusField').value = t(savedStatus);
@@ -169,7 +169,7 @@ function handleSubscribe() {
     localStorage.setItem('subscriptionDate', today.toISOString());
 
     alert(t('تم الاشتراك بنجاح! الصلاحية حتى:') + ' ' + formattedDate);
-    if (window.applyLanguage) window.applyLanguage(localStorage.getItem('siteLang') || 'ar');
+    if (window.applyLanguage) window.applyLanguage(localStorage.getItem('siteLang') || 'en');
 }
 
 function handleUnsubscribe() {
@@ -187,7 +187,7 @@ function handleUnsubscribe() {
     localStorage.removeItem('subscriptionDate');
 
     alert(t('تم إلغاء الاشتراك بنجاح!'));
-    if (window.applyLanguage) window.applyLanguage(localStorage.getItem('siteLang') || 'ar');
+    if (window.applyLanguage) window.applyLanguage(localStorage.getItem('siteLang') || 'en');
 }
 </script>
 

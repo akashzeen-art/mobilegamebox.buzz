@@ -157,7 +157,7 @@ body.lang-en .terms-list li:hover {
 // Translate terms page content based on language
 (function(){
     function translateTerms() {
-        var lang = localStorage.getItem('siteLang') || 'ar';
+        var lang = localStorage.getItem('siteLang') || 'en';
         var elements = document.querySelectorAll('[data-ar][data-en]');
         
         elements.forEach(function(el) {

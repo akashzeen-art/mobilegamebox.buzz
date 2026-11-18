@@ -27,7 +27,7 @@
         gameFrame.classList.remove('loaded');
         gameLoader.classList.remove('hidden');
 
-        var currentLang = localStorage.getItem('siteLang') || 'ar';
+        var currentLang = localStorage.getItem('siteLang') || 'en';
         var loaderText = gameLoader.querySelector('.loader-text');
         if (loaderText) {
             loaderText.textContent = currentLang === 'ar' ? 'جاري تحميل اللعبة...' : 'Loading game...';
